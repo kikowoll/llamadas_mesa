@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicio teléfono área 7</title>
+  <link rel="stylesheet" href="vector/css/index.css">
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="vector/bootstrap/css/bootstrap.min.css">
+  <!-- sweet alert css -->
+  <link rel="stylesheet" href="vector/sweetAlert/sweetalert2.min.css">
+  <!-- font-awesome-->
+  <link rel="stylesheet" href="vector/font-awesome/css/font-awesome.min.css">
+  <!--  jquery -->
+  <script>
+    if (typeof module === 'object') {
+      window.module = module;
+      module = undefined;
+    }
+  </script>
+  <script src="vector/js/jquery.js"></script>
+  <script>
+    if (window.module) module = window.module;
+  </script>
+</head>
+
+<body class="bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Servicio Teléfono área 7</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <button class="btn btn-primary btn-menu" id="btn-llamadas" onclick="btn_menu('llamadas')">Llamadas</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-primary btn-menu text-info" id="btn-grupos"
+              onclick="btn_menu('grupos')">Grupos</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-primary btn-menu text-info" id="btn-admin" onclick="btn_menu('admin')">admin</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="pantalla">
+    <div id="conte-pantallas">
+      <div class="conte-pantalla" id="llamadas">
+        <iframe src="vector/pages/llamadas.html" frameborder="0" id="iframe"></iframe>
+      </div>
+      <div class="conte-pantalla" id="grupos">
+        <div class="contenedor">
+          <div class="row">
+              <div class="lados col-md-6">
+                  <div class="card">
+                      <div class="card-header bg-primary text-light">
+                          <h4 class="card-title">Datos del Grupo</h4>
+                      </div>
+                      <div class="card-body">
+                          <!-- datos grupos -->
+                          <select class="form-select" id="selgru" aria-label="Default select example" onchange="mostrarDatosGrupos()"></select> <!-- nombre del grupo -->
+                          <div class="row" id="direcion">
+                              <!-- direcion y local -->
+                          </div><!-- fin direcion y local -->
+                          <table class="" id="horarios"></table>
+                          <p id="paso"></p>
+                      </div> <!-- fin datos grupos -->
+                  </div>
+              </div>
+              <div class="lados col-md-6">
+                <div class="card">
+                  <!-- buscador -->
+                  <div class="card-header bg-primary text-light">
+                      <h4 class="card-title">Buscador</h4>
+                  </div>
+                  <div class="card-body mb-3">
+                      <div class="input-group">
+                          <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
+                          <input type="text" id="buscador" onkeyup="mostrarBuscador()" class="form-control" placeholder="Tu busqueda aqui" aria-label="buscador"
+                              aria-describedby="basic-addon1">
+                      </div>
+                      <div id="conte-tabla">
+                        <table class="table table-striped" id="tabla-grupos"></table>
+                      </div>
+                  </div>
+              </div> <!-- fin del buscador -->
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="conte-pantalla" id="admin"></div>
+    </div>
+  </div>
+
+  <script src="vector/js/main.js"></script>
+  <!-- script de bootstap y sweet alert -->
+  <script src="vector/bootstrap/js/bootstrap.min.js"></script>
+  <script src="vector/sweetalert/sweetalert2.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav-bar {
+    ul li {
+        button {
+            background-color: transparent;
+
+            &:focus {
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+#pantalla {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 60px);
+    overflow: hidden;
+    border: 1px solid #eee;
+
+    #conte-pantallas {
+        position: relative;
+        width: 300%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .conte-pantalla {
+            position: relative;
+            width: 33.33%;
+            height: 100%;
+            color: #eee;
+
+            iframe {
+                position: relative;
+                width: 100%;
+                height: 100%;
+            }
+
+            .contenedor {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                padding: 10px 20px;
+
+                p {
+                    color: #333333;
+                }
+
+                #horarios {
+                    position: relative;
+                    width: 100%;
+                    border-collapse: collapse;
+
+                    thead {
+                        background-color: #333;
+
+                        tr th {
+                            width: 12.5%;
+                            color: #eee;
+                            text-align: center;
+
+                            &:not(:last-child) {
+                                border-right: 1px solid #eee;
+                            }
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            td {
+                                &:nth-child(1) {
+                                    background-color: #333;
+                                    color: #eee;
+                                    text-align: center;
+                                    font-weight: bold;
+                                    border-top: 1px solid #eee;
+                                }
+
+                                &:not(:first-child) {
+                                    font-size: 11px;
+                                    border: 1px solid #333;
+                                    text-align: center;
+                                    color: #333333;
+                                    background-color: #777777;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                #conte-tabla {
+                    position: relative;
+                    width: 100%;
+                    height: 0;
+                    max-height: 500px;
+                    overflow-y: auto;
+                    #tabla-grupos {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        tbody {
+                            position: relative;
+                            width: 100%;
+                            height: auto;
+                            tr {
+                                td {
+                                    text-align: left;
+    
+                                    &:nth-child(2),
+                                    &:nth-child(3),
+                                    &:nth-child(6),
+                                    &:nth-child(7),
+                                    &:nth-child(8),
+                                    &:nth-child(9) {
+                                        display: none;
+                                    }
+                                }
+                            }
+    
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

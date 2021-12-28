@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../css/llamadas.css">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <!-- sweet alert css -->
+    <link rel="stylesheet" href="../sweetAlert/sweetalert2.min.css">
+    <!-- font-awesome-->
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+    <!--  jquery -->
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <script src="../js/jquery.js"></script>
+    <script>
+        if (window.module) module = window.module;
+    </script>
+</head>
+
+<body class="bg-dark">
+
+    <div class="contenedor mt-2">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- lado izquierdo -->
+                <div class="card" id="card-servidor">
+                    <!-- empieza el servidor -->
+                    <div class="card-header bg-primary">
+                        <h4 class="card-title text-white">Servidor</h4>
+                    </div> <!-- fin card header -->
+                    <div class="card-body">
+                        <div id="serentrada">
+                            <button class="btn btn-primary" onclick="empezarServidor()">Iniciar Servicio <i
+                                    class="fa fa-play"></i></button>
+                            <input type="hidden" name="hora_entrada" id="hora_entrada">
+                        </div> <!-- fin serentrada -->
+                        <div id="serselecion" class="row">
+                            <div class="col-md-8">
+                                <select class="form-select" id="serservidor"
+                                    aria-label="Default select example"></select>
+                            </div> <!-- fin col 8 -->
+                            <div class="col-md-4">
+                                <button class="btn btn-success" onclick="selecionServidor()">Aceptar <i
+                                        class="fa fa-check"></i></button>
+                            </div> <!-- fin col 4 -->
+                        </div> <!-- fin serselecion -->
+                        <div class="row" id="serfinal">
+                            <div class="col-md-5">
+                                <button class="btn btn-danger" onclick="finalServidor()">Finalizar Servicio <i
+                                        class="fa fa-times"></i></button>
+                            </div> <!-- fin col 5 -->
+                            <div class="col-md-7">
+                                <h5 class="text-primary" id="servidor"></h5>
+                            </div> <!-- fin col 7 -->
+                        </div> <!-- fin serfinal -->
+                    </div> <!-- fin card body -->
+                </div> <!-- fin del servidor -->
+
+                <div class="card bg-dark" id="boton">
+                    <button id="crearLlamada" class="btn btn-success" onclick="crearLlamada()">Nueva llamada <i
+                            class="fa fa-plus"></i></button>
+                </div>
+
+                <!-- datos llamada -->
+                <div class="card mt-4" id="datosLlamada">
+                    <div class="card-header bg-secondary">
+                        <h4 class="text-white">Datos de la Llamada</h4>
+                    </div>
+                    <div class="card-body">
+                        <label for="">Llamada:</label>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <select class="form-select" id="llamado" aria-label="Default select example">
+                                    <option selected value="1" disabled>Quien ha llamado</option>
+                                    <option value="INTERESADO">Interesado</option>
+                                    <option value="FAMILIAR">Familiar</option>
+                                    <option value="COMPAÑERO">Compañero</option>
+                                    <option value="COLEGIO">Colegio</option>
+                                    <option value="CENTRO SALUD">Centro Salud</option>
+                                    <option value="CENTRO PENITENCIARIO">Centro Penitenciario</option>
+                                    <option value="OTROS">Otros</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <select class="form-select" id="conocido" aria-label="Default select example">
+                                    <option selected value="1" disabled>Como nos han conocido</option>
+                                    <option value="PAGINA DE A.A.">Pagina de A.A.</option>
+                                    <option value="DIRECTORIO ONLINE">Directorio online</option>
+                                    <option value="CARTELERIA">Carteleria</option>
+                                    <option value="SANIDAD">Sanidad</option>
+                                    <option value="INSTITUCIONES">Instituciones</option>
+                                    <option value="YA NOS CONOCE">Ya nos conoce</option>
+                                    <option value="CAMPAÑA I.P.">Campaña I.P.</option>
+                                    <option value="RADIO TV PRENSA">Radio, TV, Prensa</option>
+                                    <option value="OTROS">Otros</option>
+                                </select>
+                            </div>
+                        </div>
+                        <label for="txt-descripcion" class="mt-2">Descripcion de la llamada:</label>
+                        <textarea name="" id="txt-descripcion" rows="2" class="form-control"
+                            placeholder="aqui"></textarea>
+                        <label for="">Relaccion de la llamada:</label>
+                        <div class="row mt-2">
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn-relac btn btn-primary" id="NORMAL">Normal</button>
+                                <button type="button" class="btn-relac btn btn-outline-primary" id="PASO XII">Paso
+                                    XII</button>
+                                <button type="button" class="btn-relac btn btn-outline-primary"
+                                    id="INFORMACION PUBLICA">I. Publica</button>
+                                <button type="button" class="btn-relac btn btn-outline-primary"
+                                    id="INSTITUCIONES">Instituciones</button>
+                                <input type="hidden" name="relacionada" id="relacionada" value="NORMAL">
+                            </div>
+                            <div id="asunto">
+                                <label for="txt-descripcion">Descripcion de relacion</label>
+                                <textarea name="" id="aviso" rows="2" class="form-control"
+                                    placeholder="Descripcion de la relacion aqui"></textarea>
+                            </div>
+                            <div class="row">
+                                <label for="">Grupos Enviados</label>
+                                <div class="col-md-6">
+                                    <select class="form-select" id="grupo1"
+                                        aria-label="Default select example"></select>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="form-select" id="grupo2"
+                                        aria-label="Default select example"></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-3">
+                                    <button class="btn btn-success" onclick="mandarLlamada()">Hecho <i
+                                            class="fa fa-check"></i></button>
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="btn btn-danger" onclick="cancelarLlamada()">Cancelar <i
+                                            class="fa fa-times"></i></button>
+                                </div>
+                                <div class="col-md-3"></div>
+                            </div>
+                        </div>
+                    </div> <!-- fin card body -->
+                </div> <!-- fin datos llamada -->
+            </div><!-- lado izquierdo -->
+
+            <div class="col-md-6">
+                <!-- lado derecho -->
+                <div class="card" id="lado-derecho">
+                    <div class="card-header bg-primary">
+                        <h4 class="card-title text-white">Llamadas</h4>
+                    </div>
+                    <div class="card-body bg-dark" id="derecho-llamada">
+                        <div class="row">
+                            <div class="btn-group mb-2" role="group" aria-label="Basic example">
+                                <button type="button" id="turno" class="btn btn-primary"
+                                    onclick="mostrarLlamada()">Llamadas Turno</button>
+                                <button type="button" id="hoy" class="btn btn-outline-danger"
+                                    onclick="mostrarLlamadaTotal()">Llamadas Hoy</button>
+                            </div>
+                        </div>
+                        <div id="conte-tabla-llamadas">
+                            <table id="tabla-llamadas">
+                                <tbody id="conte-llamadas"></tbody>
+                            </table>
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- fin lado derecho -->
+        </div> <!-- fin row -->
+    </div> <!-- fin contenedor -->
+
+    <script src="../js/main.js"></script>
+    <!-- script de bootstap y sweet alert -->
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../sweetalert/sweetalert2.min.js"></script>
+
+</body>
+
+</html>

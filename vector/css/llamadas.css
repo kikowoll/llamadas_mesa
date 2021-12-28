@@ -1,0 +1,134 @@
+/*#0275d8*/
+.contenedor {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  /* derecho */
+}
+.contenedor #card-servidor .card-body #serselecion,
+.contenedor #card-servidor .card-body #serfinal {
+  display: none;
+}
+.contenedor #boton {
+  position: relative;
+  text-align: center;
+  margin-top: 80px;
+  border: 0;
+  outline: 0;
+  display: none;
+}
+.contenedor #boton #crearLlamada {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.contenedor #datosLlamada {
+  display: none;
+}
+.contenedor #datosLlamada #asunto {
+  display: none;
+}
+.contenedor #lado-derecho {
+  display: none;
+}
+.contenedor #lado-derecho #derecho-llamada {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 70px);
+  overflow: hidden;
+}
+.contenedor #lado-derecho #derecho-llamada .btn-group #turno, .contenedor #lado-derecho #derecho-llamada .btn-group #hoy {
+  outline: none;
+}
+.contenedor #lado-derecho #derecho-llamada .btn-group #turno:focus, .contenedor #lado-derecho #derecho-llamada .btn-group #hoy:focus {
+  outline: none;
+  box-shadow: none;
+}
+.contenedor #lado-derecho #derecho-llamada #conte-tabla-llamadas {
+  position: relative;
+  width: 100%;
+  height: 93%;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.contenedor #lado-derecho #derecho-llamada #conte-tabla-llamadas #tabla-llamadas {
+  position: relative;
+  width: 100%;
+  height: auto;
+  border-collapse: collapse;
+}
+.contenedor #lado-derecho #derecho-llamada #conte-tabla-llamadas #tabla-llamadas #conte-llamadas {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.contenedor #lado-derecho #derecho-llamada #conte-tabla-llamadas #tabla-llamadas #conte-llamadas tr td:nth-child(1) {
+  width: 50px;
+  height: 40px;
+}
+.contenedor #lado-derecho #derecho-llamada #conte-tabla-llamadas #tabla-llamadas #conte-llamadas tr td:nth-child(1) i {
+  width: 34px;
+  height: 34px;
+  font-size: 28px;
+  background-color: #eee;
+  color: #0275d8;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 34px;
+}
+.contenedor #lado-derecho #derecho-llamada #conte-tabla-llamadas #tabla-llamadas #conte-llamadas tr td:nth-child(2) {
+  width: calc(100% - 50px);
+  border-radius: 20px;
+  border: 1px solid #eee;
+}
+.contenedor #lado-derecho #derecho-llamada #conte-tabla-llamadas #tabla-llamadas #conte-llamadas tr td:nth-child(2) h6 {
+  text-align: left;
+  color: lightgreen;
+  width: 90%;
+  margin: 0 auto;
+}
+.contenedor #lado-derecho #derecho-llamada #conte-tabla-llamadas #tabla-llamadas #conte-llamadas tr td:nth-child(2) h6 span {
+  color: #eee;
+}
+.contenedor #lado-derecho #derecho-llamada #conte-tabla-llamadas #tabla-llamadas #conte-llamadas tr td:nth-child(2) .conte-ver {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 7px;
+  display: none;
+}
+.contenedor #lado-derecho #derecho-llamada #conte-tabla-llamadas #tabla-llamadas #conte-llamadas tr td:nth-child(2) .conte-ver p {
+  width: 100%;
+  color: #eee;
+  margin: 0px;
+}
+.contenedor #lado-derecho #derecho-llamada #conte-tabla-llamadas #tabla-llamadas #conte-llamadas tr td:nth-child(2) .conte-ver p b {
+  color: lightgreen;
+}
+.contenedor #lado-derecho #derecho-llamada #conte-tabla-llamadas #tabla-llamadas #conte-llamadas tr td:nth-child(2) .fecha {
+  color: lightgreen;
+  text-align: right;
+  width: 90%;
+  margin: 0 auto;
+  font-size: 12px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: 0 0 3px cyan;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: cyan;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: blue;
+}

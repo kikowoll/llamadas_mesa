@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupos</title>
+    <link rel="stylesheet" href="../css/grupos.css">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <!-- sweet alert css -->
+    <link rel="stylesheet" href="../sweetAlert/sweetalert2.min.css">
+    <!-- font-awesome-->
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+    <!--  jquery -->
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
+    <script src="../js/jquery.js"></script>
+    <script>
+        if (window.module) module = window.module;
+    </script>
+</head>
+
+<body class="bg-dark">
+    <div class="contenedor">
+        <div class="row">
+            <div class="lados col-md-6">
+                <div class="card">
+                    <!-- buscador -->
+                    <div class="card-header bg-primary text-light">
+                        <h4 class="card-title">Buscador</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
+                            <input type="text" class="form-control" placeholder="Tu busqueda aqui" aria-label="buscador"
+                                aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                </div> <!-- fin del buscador -->
+                <div class="card mt-3">
+                    <div class="card-header bg-primary text-light">
+                        <h4 class="card-title">Datos del Grupo</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- datos grupos -->
+                        <select class="form-select" id="selgru" aria-label="Default select example"></select> <!-- nombre del grupo -->
+                        <div class="row mt-2">
+                            <!-- direcion y local -->
+                            <p class="direcion" id="direcion">calle beneficencia, 18 - pquia. del Redentor</p>
+                        </div><!-- fin direcion y local -->
+                        <div class="row">
+                            <!-- municipio, ciudad y codigo postal -->
+                            <p class="municipio" id="municipio">Centro, 28012 - Madrid</p>
+                        </div> <!-- fin municipio, ciudad y codigo postal -->
+                        <table class="table table-bordered" id="horarios">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>LUN</th>
+                                    <th>MAR</th>
+                                    <th>MIE</th>
+                                    <th>JUE</th>
+                                    <th>VIE</th>
+                                    <th>SAB</th>
+                                    <th>DOM</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tr">
+                                <td>mañana</td>
+                                <td id="ml"></td>
+                                <td id="mm"></td>
+                                <td id="mx"></td>
+                                <td id="mj"></td>
+                                <td id="mv"></td>
+                                <td id="ms"></td>
+                                <td id="md"></td>
+                            </tbody>
+                            <tbody id="tr">
+                                <td>tarde</td>
+                                <td id="tl"></td>
+                                <td id="tm"></td>
+                                <td id="tx"></td>
+                                <td id="tj"></td>
+                                <td id="tv"></td>
+                                <td id="ts"></td>
+                                <td id="td"></td>
+                            </tbody>
+                            <tbody id="tr">
+                                <td>online</td>
+                                <td id="ol"></td>
+                                <td id="om"></td>
+                                <td id="ox"></td>
+                                <td id="oj"></td>
+                                <td id="ov"></td>
+                                <td id="os"></td>
+                                <td id="od"></td>
+                            </tbody>
+                        </table>
+                        <p id="paso"></p>
+                    </div> <!-- fin datos grupos -->
+                </div>
+            </div>
+            <div class="lados col-md-6"></div>
+        </div>
+    </div>
+    <script src="../js/main.js"></script>
+    <!-- script de bootstap y sweet alert -->
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../sweetalert/sweetalert2.min.js"></script>
+</body>
+
+</html>
